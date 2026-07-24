@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osama Alshammari - Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .lang-btn {
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .hero {
+            padding: 80px 10%;
+            text-align: center;
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: #334155;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        .section-title {
+            font-size: 26px;
+            color: #38bdf8;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #334155;
+        }
+
+        .card h3 {
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .contact-box {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-box a {
+            color: #38bdf8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cv-container {
+            background-color: #0f172a;
+            border-top: 1px solid #334155;
+            text-align: center;
+            direction: ltr;
+        }
+
+        .btn-download {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #2563eb;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            transition: background 0.3s;
+        }
+
+        .btn-download:hover {
+            background-color: #1d4ed8;
+        }
+
+        .iframe-box {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 750px;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            background-color: #ffffff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #020617;
+            color: #64748b;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Osama Alshammari</div>
+        <nav class="nav-links">
+            <a href="#about" id="nav-about">عني</a>
+            <a href="#education" id="nav-edu">التعليم</a>
+            <a href="#projects" id="nav-proj">المشاريع</a>
+            <a href="#skills" id="nav-skills">المهارات</a>
+            <a href="#contact" id="nav-contact">التواصل</a>
+            <a href="#cv-section" id="nav-cv">السيرة الذاتية</a>
+        </nav>
+        <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
+    </header>
+
+    <section class="hero">
+        <h1 id="hero-title">أسامة الشمري</h1>
+        <p id="hero-bio">خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.</p>
+        <div>
+            <a href="https://www.linkedin.com/in/osamashmry" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-linkedin">LinkedIn</a>
+            <a href="https://wa.me/9665xxxxxxxx" target="_blank" class="btn btn-success" id="btn-whatsapp">💬 واتساب</a>
+            <a href="mailto:your-email@example.com" class="btn btn-secondary" id="btn-email">✉️ إيميل</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title" id="title-about">نبذة عني</h2>
+        <div class="card">
+            <p id="about-desc">خريج علوم حاسب أمتلك خبرة عملية في تطوير تطبيقات الويب وإدارة قواعد البيانات وحل المشكلات البرمجية، وأسعى للانضمام لفريق عمل مميز في مجالات برمجة الويب أو هندسة البرمجيات.</p>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2 class="section-title" id="title-edu">التعليم</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 id="edu-degree">بكالوريوس علوم الحاسب</h3>
+                <p id="edu-univ" style="color: #38bdf8; margin-bottom: 10px;">جامعة حفر الباطن</p>
+                <p id="edu-desc">دراسة شاملة لقواعد البيانات، الخوارزميات، أمن الشبكات والتشفير، وهندسة البرمجيات.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title" id="title-proj">المشاريع والخبرات</h2>
+        <div class="grid">
+            <div class="card">
+                <h3 id="p1-t">التدريب التعاوني - KFMC</h3>
+                <p id="p1-d">تطوير وتصميم تطبيقات ويب متكاملة وإدارة قواعد البيانات باستعمال Visual Studio 2019، ASP.NET Core، ASP.NET MVC، و SQL Server، مع تطبيق أفضل الممارسات في هندسة البرمجيات وتكامل الأنظمة الطبية.</p>
+            </div>
+            <div class="card">
+                <h3 id="p2-t">تطوير تطبيقات الويب وقواعد البيانات</h3>
+                <p id="p2-d">بناء تطبيق ويب متكامل باستعمال C# و ASP.NET Core بتصميم الطبقات المترابطة وتكامل قواعد البيانات SQL.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2 class="section-title" id="title-skills">المهارات</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Programming & Web</h3>
+                <p>C#, ASP.NET Core, ASP.NET MVC, SQL Server, Visual Studio 2019, HTML/CSS, JavaScript</p>
+            </div>
+            <div class="card">
+                <h3>Technical & Analytical</h3>
+                <p>Database Architecture, Full-Stack Web Development, System Integration, System Troubleshooting</p>
+            </div>
+            <div class="card">
+                <h3>Soft Skills</h3>
+                <p>Work Under Pressure, Problem Solving, Fast Learning, Teamwork, Technical Communication</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم التواصل المباشر -->
+    <section id="contact">
+        <h2 class="section-title" id="title-contact">تواصل معي</h2>
+        <div class="contact-box">
+            <p style="font-size: 18px; margin-bottom: 15px;" id="contact-text">يسعدني التواصل معك لأي استفسارات أو فرص عمل:</p>
+            <p style="margin-bottom: 10px;">📱 <strong id="lbl-phone">رقم الجوال:</strong> <a href="tel:+966556479058" dir="ltr">+966 556479058</a></p>
+            <p>✉️ <strong id="lbl-email"></strong> <a href="mailto:shmryaa618@gmail.com">shmryaa618@gmail.com</a></p>
+        </div>
+    </section>
+
+    <section class="cv-container" id="cv-section">
+        <h2 class="section-title" id="title-cv" style="color: #ffffff;">MY RESUME</h2>
+        
+        <a id="btn-cv-download" href="Osama_Alshammari_CV_Updated.pdf" download class="btn-download">
+            📄 Download CV (PDF)
+        </a>
+
+        <div class="iframe-box">
+            <iframe src="Osama_Alshammari_CV_Updated.pdf"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Osama Alshammari. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+
+        const translations = {
+            ar: {
+                navAbout: "عني", navEdu: "التعليم", navProj: "المشاريع", navSkills: "المهارات", navContact: "التواصل", navCv: "السيرة الذاتية",
+                heroTitle: "أسامة الشمري", heroBio: "خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.",
+                btnLinkedin: "LinkedIn", btnWhatsapp: "💬 واتساب", btnEmail: "✉️ إيميل",
+                titleAbout: "نبذة عني", aboutDesc: "خريج علوم حاسب أمتلك خبرة عملية في تطوير تطبيقات الويب وإدارة قواعد البيانات وحل المشكلات البرمجية، وأسعى للانضمام لفريق عمل مميز في مجالات برمجة الويب أو هندسة البرمجيات.",
+                titleEdu: "التعليم", eduDegree: "بكالوريوس علوم الحاسب", eduUniv: "جامعة حفر الباطن", eduDesc: "دراسة شاملة لقواعد البيانات، الخوارزميات، أمن الشبكات والتشفير، وهندسة البرمجيات.",
+                titleProj: "المشاريع والخبرات", 
+                p1T: "التدريب التعاوني - KFMC", 
+                p1D: "تطوير وتصميم تطبيقات ويب متكاملة وإدارة قواعد البيانات باستعمال Visual Studio 2019، ASP.NET Core، ASP.NET MVC، و SQL Server، مع تطبيق أفضل الممارسات في هندسة البرمجيات وتكامل الأنظمة الطبية.",
+                p2T: "تطوير تطبيقات الويب وقواعد البيانات", p2D: "بناء تطبيق ويب متكامل باستعمال C# و ASP.NET Core بتصميم الطبقات المترابطة وتكامل قواعد البيانات SQL.",
+                titleSkills: "المهارات", 
+                titleContact: "تواصل معي", contactText: "يسعدني التواصل معك لأي استفسارات أو فرص عمل:", lblPhone: "رقم الجوال:", lblEmail: "البريد الإلكتروني:",
+                titleCv: "السيرة الذاتية (RESUME)", btnCvDownload: "📄 تحميل السيرة الذاتية (PDF)",
+                langBtn: "English", dir: "rtl"
+            },
+            en: {
+                navAbout: "About", navEdu: "Education", navProj: "Projects", navSkills: "Skills", navContact: "Contact", navCv: "CV",
+                heroTitle: "Osama Alshammari", heroBio: "Computer Science Graduate passionate about Software Engineering, Web Development, and Data Analysis.",
+                btnLinkedin: "LinkedIn", btnWhatsapp: "💬 WhatsApp", btnEmail: "✉️ Email",
+                titleAbout: "About Me", aboutDesc: "Computer Science graduate with hands-on experience in full-stack web applications, database architecture, and system troubleshooting.",
+                titleEdu: "Education", eduDegree: "Bachelor's Degree in Computer Science", eduUniv: "University of Hafar Al Batin", eduDesc: "Comprehensive coursework in Database Management, Algorithms, Network Security, Cryptography, and Software Engineering.",
+                titleProj: "Experience & Projects", 
+                p1T: "COOP Training - KFMC", 
+                p1D: "Developed scalable full-stack web applications and managed database architecture using Visual Studio 2019, ASP.NET Core, ASP.NET MVC, and SQL Server, applying software engineering best practices.",
+                p2T: "Full-Stack Web & SQL Projects", p2D: "Engineered scalable web applications using C# and ASP.NET Core with layered architecture and SQL database integration.",
+                titleSkills: "Skills", 
+                titleContact: "Contact Me", contactText: "Feel free to reach out for opportunities or inquiries:", lblPhone: "Phone:", lblEmail: "Email:",
+                titleCv: "MY RESUME", btnCvDownload: "📄 Download CV (PDF)",
+                langBtn: "عربي", dir: "ltr"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const t = translations[currentLang];
+
+            document.documentElement.dir = t.dir;
+            document.getElementById('lang-btn').innerText = t.langBtn;
+            
+            document.getElementById('nav-about').innerText = t.navAbout;
+            document.getElementById('nav-edu').innerText = t.navEdu;
+            document.getElementById('nav-proj').innerText = t.navProj;
+            document.getElementById('nav-skills').innerText = t.navSkills;
+            document.getElementById('nav-contact').innerText = t.navContact;
+            document.getElementById('nav-cv').innerText = t.navCv;
+
+            document.getElementById('hero-title').innerText = t.heroTitle;
+            document.getElementById('hero-bio').innerText = t.heroBio;
+            document.getElementById('btn-linkedin').innerText = t.btnLinkedin;
+            document.getElementById('btn-whatsapp').innerText = t.btnWhatsapp;
+            document.getElementById('btn-email').innerText = t.btnEmail;
+
+            document.getElementById('title-about').innerText = t.titleAbout;
+            document.getElementById('about-desc').innerText = t.aboutDesc;
+
+            document.getElementById('title-edu').innerText = t.titleEdu;
+            document.getElementById('edu-degree').innerText = t.eduDegree;
+            document.getElementById('edu-univ').innerText = t.eduUniv;
+            document.getElementById('edu-desc').innerText = t.eduDesc;
+
+            document.getElementById('title-proj').innerText = t.titleProj;
+            document.getElementById('p1-t').innerText = t.p1T;
+            document.getElementById('p1-d').innerText = t.p1D;
+            document.getElementById('p2-t').innerText = t.p2T;
+            document.getElementById('p2-d').innerText = t.p2D;
+
+            document.getElementById('title-skills').innerText = t.titleSkills;
+
+            document.getElementById('title-contact').innerText = t.titleContact;
+            document.getElementById('contact-text').innerText = t.contactText;
+            document.getElementById('lbl-phone').innerText = t.lblPhone;
+            document.getElementById('lbl-email').innerText = t.lblEmail;
+
+            document.getElementById('title-cv').innerText = t.titleCv;
+            document.getElementById('btn-cv-download').innerText = t.btnCvDownload;
+        }
+    </script>
+</body>
+</html>
