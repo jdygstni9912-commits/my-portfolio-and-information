@@ -128,7 +128,7 @@
 
         .card h3 {
             color: #f1f5f9;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
         .card p, .card ul {
@@ -141,7 +141,7 @@
             line-height: 1.8;
         }
 
-        html[dir="ltr"] .card ul {
+        .card-en ul {
             padding-right: 0;
             padding-left: 20px;
         }
@@ -232,10 +232,33 @@
         </div>
     </section>
 
+    <!-- قسم نبذة عني باللغتين العربية والإنجليزية معاً -->
     <section id="about">
-        <h2 class="section-title" id="title-about">نبذة عني</h2>
-        <div class="card" id="about-container">
-            <!-- سيتم تعبئته تلقائياً بالتنسيق التفاعلي للغة -->
+        <h2 class="section-title" id="title-about">نبذة عني / About Me</h2>
+        <div class="grid">
+            <!-- البطاقة العربية -->
+            <div class="card" dir="rtl">
+                <h3 style="color: #38bdf8;">🇸🇦 نبذة عني</h3>
+                <p style="margin-bottom: 12px;"><strong>خريج علوم حاسب</strong> أجمع بين التأسيس الأكاديمي القوي والخبرة العملية الميدانية في تطوير الحلول البرمجية:</p>
+                <ul>
+                    <li><strong>الخبرة العملية:</strong> مطور ويب (Full-Stack) خلال التدريب التعاوني بمدينة الملك فهد الطبية.</li>
+                    <li><strong>التقنيات الأساسية:</strong> بناء تطبيقات ومواقع الويب باستخدام C#، ASP.NET Core، و SQL Server.</li>
+                    <li><strong>الخلفية الأكاديمية:</strong> خوارزميات وهياكل البيانات، شبكات الحاسب، الذكاء الاصطناعي، والأمن السيبراني.</li>
+                    <li><strong>الهدف المهني:</strong> الانضمام لفريق عمل مميز في مجالات هندسة البرمجيات وتطوير الويب.</li>
+                </ul>
+            </div>
+
+            <!-- البطاقة الإنجليزية -->
+            <div class="card card-en" dir="ltr">
+                <h3 style="color: #38bdf8;">🇬🇧 About Me</h3>
+                <p style="margin-bottom: 12px;"><strong>Computer Science Graduate</strong> combining solid academic foundations with hands-on software development experience:</p>
+                <ul>
+                    <li><strong>Professional Experience:</strong> Full-Stack Web Developer Intern at King Fahd Medical City.</li>
+                    <li><strong>Core Tech Stack:</strong> Web Application Development using C#, ASP.NET Core, and SQL Server.</li>
+                    <li><strong>Academic Background:</strong> Data Structures, Algorithms, Computer Networks, AI, and Cybersecurity.</li>
+                    <li><strong>Career Goal:</strong> Seeking a full-time role in Software Engineering or Web Development.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
@@ -316,14 +339,7 @@
                 navAbout: "عني", navEdu: "التعليم", navProj: "المشاريع", navSkills: "المهارات", navContact: "التواصل", navCv: "السيرة الذاتية",
                 heroTitle: "أسامة الشمري", heroBio: "خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.",
                 btnLinkedin: "LinkedIn", btnWhatsapp: "💬 واتساب", btnEmail: "✉️ إيميل",
-                titleAbout: "نبذة عني", 
-                aboutHTML: `<p style="margin-bottom: 10px;"><strong>خريج علوم حاسب</strong> أجمع بين التأسيس الأكاديمي القوي والخبرة العملية الميدانية في تطوير الحلول البرمجية:</p>
-                            <ul>
-                              <li><strong>الخبرة العملية:</strong> مطور ويب (Full-Stack) خلال التدريب التعاوني بمدينة الملك فهد الطبية.</li>
-                              <li><strong>التقنيات الأساسية:</strong> بناء تطبيقات ومواقع الويب باستخدام C#، ASP.NET Core، و SQL Server.</li>
-                              <li><strong>الخلفية الأكاديمية:</strong> خوارزميات وهياكل البيانات، شبكات الحاسب، الذكاء الاصطناعي، والأمن السيبراني.</li>
-                              <li><strong>الهدف المهني:</strong> الانضمام لفريق احترافي في مجالات هندسة البرمجيات وتطوير الويب.</li>
-                            </ul>`,
+                titleAbout: "نبذة عني / About Me",
                 titleEdu: "التعليم", eduDegree: "بكالوريوس علوم الحاسب", eduUniv: "جامعة حفر الباطن", 
                 eduDesc: "دراسة شاملة لقواعد البيانات، الخوارزميات وهياكل البيانات، شبكات الحاسب، أمن المعلومات، والذكاء الاصطناعي، مع إتقان استخدام أدوات البرمجة وحزمة Microsoft Office (Excel, PowerPoint, Word, Outlook).",
                 titleProj: "المشاريع والخبرات", 
@@ -339,14 +355,7 @@
                 navAbout: "About", navEdu: "Education", navProj: "Projects", navSkills: "Skills", navContact: "Contact", navCv: "CV",
                 heroTitle: "Osama Alshammari", heroBio: "Computer Science Graduate passionate about Software Engineering, Web Development, and Data Analysis.",
                 btnLinkedin: "LinkedIn", btnWhatsapp: "💬 WhatsApp", btnEmail: "✉️ Email",
-                titleAbout: "About Me", 
-                aboutHTML: `<p style="margin-bottom: 10px;"><strong>Computer Science Graduate</strong> combining solid academic foundations with hands-on software development experience:</p>
-                            <ul>
-                              <li><strong>Professional Experience:</strong> Full-Stack Web Developer Intern at King Fahd Medical City.</li>
-                              <li><strong>Core Tech Stack:</strong> Web Application Development using C#, ASP.NET Core, and SQL Server.</li>
-                              <li><strong>Academic Background:</strong> Data Structures, Algorithms, Computer Networks, AI, and Cybersecurity.</li>
-                              <li><strong>Career Goal:</strong> Seeking a full-time role in Software Engineering or Web Development.</li>
-                            </ul>`,
+                titleAbout: "About Me / نبذة عني",
                 titleEdu: "Education", eduDegree: "Bachelor's Degree in Computer Science", eduUniv: "University of Hafar Al Batin", 
                 eduDesc: "Comprehensive coursework in Database Management, Algorithms, Network Security, Cryptography, and Software Engineering, proficient with Microsoft Office tools.",
                 titleProj: "Experience & Projects", 
@@ -360,7 +369,8 @@
             }
         };
 
-        function updateUI() {
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
             const t = translations[currentLang];
 
             document.documentElement.dir = t.dir;
@@ -380,7 +390,6 @@
             document.getElementById('btn-email').innerText = t.btnEmail;
 
             document.getElementById('title-about').innerText = t.titleAbout;
-            document.getElementById('about-container').innerHTML = t.aboutHTML;
 
             document.getElementById('title-edu').innerText = t.titleEdu;
             document.getElementById('edu-degree').innerText = t.eduDegree;
@@ -403,14 +412,6 @@
             document.getElementById('title-cv').innerText = t.titleCv;
             document.getElementById('btn-cv-download').innerText = t.btnCvDownload;
         }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            updateUI();
-        }
-
-        // تشغيل التنسيق لأول مرة
-        updateUI();
     </script>
 </body>
 </html>
