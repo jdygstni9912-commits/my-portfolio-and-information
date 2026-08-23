@@ -131,9 +131,19 @@
             margin-bottom: 10px;
         }
 
-        .card p {
+        .card p, .card ul {
             color: #94a3b8;
-            font-size: 14px;
+            font-size: 15px;
+        }
+
+        .card ul {
+            padding-right: 20px;
+            line-height: 1.8;
+        }
+
+        html[dir="ltr"] .card ul {
+            padding-right: 0;
+            padding-left: 20px;
         }
 
         .contact-box {
@@ -216,16 +226,16 @@
         <h1 id="hero-title">أسامة الشمري</h1>
         <p id="hero-bio">خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.</p>
         <div>
-            <a href=https://www.linkedin.com/in/osamaalshammarii/ target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-linkedin">LinkedIn</a>
-            <a href="https://wa.me/9665xxxxxxxx" target="_blank" class="btn btn-success" id="btn-whatsapp">💬 واتساب</a>
-            <a href="mailto:your-email@example.com" class="btn btn-secondary" id="btn-email">✉️ إيميل</a>
+            <a href="https://www.linkedin.com/in/osamaalshammarii/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-linkedin">LinkedIn</a>
+            <a href="https://wa.me/966556479058" target="_blank" class="btn btn-success" id="btn-whatsapp">💬 واتساب</a>
+            <a href="mailto:shmryaa618@gmail.com" class="btn btn-secondary" id="btn-email">✉️ إيميل</a>
         </div>
     </section>
 
     <section id="about">
         <h2 class="section-title" id="title-about">نبذة عني</h2>
-        <div class="card">
-            <p id="about-desc">خريج علوم حاسب أمتلك خبرة عملية في تطوير تطبيقات الويب وإدارة قواعد البيانات وحل المشكلات البرمجية، وأسعى للانضمام لفريق عمل مميز في مجالات برمجة الويب أو هندسة البرمجيات.</p>
+        <div class="card" id="about-container">
+            <!-- سيتم تعبئته تلقائياً بالتنسيق التفاعلي للغة -->
         </div>
     </section>
 
@@ -235,7 +245,7 @@
             <div class="card">
                 <h3 id="edu-degree">بكالوريوس علوم الحاسب</h3>
                 <p id="edu-univ" style="color: #38bdf8; margin-bottom: 10px;">جامعة حفر الباطن</p>
-                <p id="edu-desc">دراسة شاملة لقواعد البيانات، الخوارزميات، أمن الشبكات والتشفير، وهندسة البرمجيات.</p>
+                <p id="edu-desc">دراسة شاملة لقواعد البيانات، الخوارزميات وهياكل البيانات، شبكات الحاسب، أمن المعلومات، والذكاء الاصطناعي، مع إتقان استخدام أدوات البرمجة وحزمة Microsoft Office (Excel, PowerPoint, Word, Outlook).</p>
             </div>
         </div>
     </section>
@@ -278,7 +288,7 @@
         <div class="contact-box">
             <p style="font-size: 18px; margin-bottom: 15px;" id="contact-text">يسعدني التواصل معك لأي استفسارات أو فرص عمل:</p>
             <p style="margin-bottom: 10px;">📱 <strong id="lbl-phone">رقم الجوال:</strong> <a href="tel:+966556479058" dir="ltr">+966 556479058</a></p>
-            <p>✉️ <strong id="lbl-email"></strong> <a href="mailto:shmryaa618@gmail.com">shmryaa618@gmail.com</a></p>
+            <p>✉️ <strong id="lbl-email">البريد الإلكتروني:</strong> <a href="mailto:shmryaa618@gmail.com">shmryaa618@gmail.com</a></p>
         </div>
     </section>
 
@@ -306,8 +316,16 @@
                 navAbout: "عني", navEdu: "التعليم", navProj: "المشاريع", navSkills: "المهارات", navContact: "التواصل", navCv: "السيرة الذاتية",
                 heroTitle: "أسامة الشمري", heroBio: "خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.",
                 btnLinkedin: "LinkedIn", btnWhatsapp: "💬 واتساب", btnEmail: "✉️ إيميل",
-                titleAbout: "نبذة عني", aboutDesc: "خريج علوم حاسب أمتلك خبرة عملية في تطوير تطبيقات الويب وإدارة قواعد البيانات وحل المشكلات البرمجية، وأسعى للانضمام لفريق عمل مميز في مجالات برمجة الويب أو هندسة البرمجيات.",
-                titleEdu: "التعليم", eduDegree: "بكالوريوس علوم الحاسب", eduUniv: "جامعة حفر الباطن", eduDesc: "دراسة شاملة لقواعد البيانات، الخوارزميات، أمن الشبكات والتشفير، وهندسة البرمجيات.",
+                titleAbout: "نبذة عني", 
+                aboutHTML: `<p style="margin-bottom: 10px;"><strong>خريج علوم حاسب</strong> أجمع بين التأسيس الأكاديمي القوي والخبرة العملية الميدانية في تطوير الحلول البرمجية:</p>
+                            <ul>
+                              <li><strong>الخبرة العملية:</strong> مطور ويب (Full-Stack) خلال التدريب التعاوني بمدينة الملك فهد الطبية.</li>
+                              <li><strong>التقنيات الأساسية:</strong> بناء تطبيقات ومواقع الويب باستخدام C#، ASP.NET Core، و SQL Server.</li>
+                              <li><strong>الخلفية الأكاديمية:</strong> خوارزميات وهياكل البيانات، شبكات الحاسب، الذكاء الاصطناعي، والأمن السيبراني.</li>
+                              <li><strong>الهدف المهني:</strong> الانضمام لفريق احترافي في مجالات هندسة البرمجيات وتطوير الويب.</li>
+                            </ul>`,
+                titleEdu: "التعليم", eduDegree: "بكالوريوس علوم الحاسب", eduUniv: "جامعة حفر الباطن", 
+                eduDesc: "دراسة شاملة لقواعد البيانات، الخوارزميات وهياكل البيانات، شبكات الحاسب، أمن المعلومات، والذكاء الاصطناعي، مع إتقان استخدام أدوات البرمجة وحزمة Microsoft Office (Excel, PowerPoint, Word, Outlook).",
                 titleProj: "المشاريع والخبرات", 
                 p1T: "التدريب التعاوني - KFMC", 
                 p1D: "تطوير وتصميم تطبيقات ويب متكاملة وإدارة قواعد البيانات باستعمال Visual Studio 2019، ASP.NET Core، ASP.NET MVC، و SQL Server، مع تطبيق أفضل الممارسات في هندسة البرمجيات وتكامل الأنظمة الطبية.",
@@ -321,8 +339,16 @@
                 navAbout: "About", navEdu: "Education", navProj: "Projects", navSkills: "Skills", navContact: "Contact", navCv: "CV",
                 heroTitle: "Osama Alshammari", heroBio: "Computer Science Graduate passionate about Software Engineering, Web Development, and Data Analysis.",
                 btnLinkedin: "LinkedIn", btnWhatsapp: "💬 WhatsApp", btnEmail: "✉️ Email",
-                titleAbout: "About Me", aboutDesc: "Computer Science graduate with hands-on experience in full-stack web applications, database architecture, and system troubleshooting.",
-                titleEdu: "Education", eduDegree: "Bachelor's Degree in Computer Science", eduUniv: "University of Hafar Al Batin", eduDesc: "Comprehensive coursework in Database Management, Algorithms, Network Security, Cryptography, and Software Engineering.",
+                titleAbout: "About Me", 
+                aboutHTML: `<p style="margin-bottom: 10px;"><strong>Computer Science Graduate</strong> combining solid academic foundations with hands-on software development experience:</p>
+                            <ul>
+                              <li><strong>Professional Experience:</strong> Full-Stack Web Developer Intern at King Fahd Medical City.</li>
+                              <li><strong>Core Tech Stack:</strong> Web Application Development using C#, ASP.NET Core, and SQL Server.</li>
+                              <li><strong>Academic Background:</strong> Data Structures, Algorithms, Computer Networks, AI, and Cybersecurity.</li>
+                              <li><strong>Career Goal:</strong> Seeking a full-time role in Software Engineering or Web Development.</li>
+                            </ul>`,
+                titleEdu: "Education", eduDegree: "Bachelor's Degree in Computer Science", eduUniv: "University of Hafar Al Batin", 
+                eduDesc: "Comprehensive coursework in Database Management, Algorithms, Network Security, Cryptography, and Software Engineering, proficient with Microsoft Office tools.",
                 titleProj: "Experience & Projects", 
                 p1T: "COOP Training - KFMC", 
                 p1D: "Developed scalable full-stack web applications and managed database architecture using Visual Studio 2019, ASP.NET Core, ASP.NET MVC, and SQL Server, applying software engineering best practices.",
@@ -334,8 +360,7 @@
             }
         };
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+        function updateUI() {
             const t = translations[currentLang];
 
             document.documentElement.dir = t.dir;
@@ -355,7 +380,7 @@
             document.getElementById('btn-email').innerText = t.btnEmail;
 
             document.getElementById('title-about').innerText = t.titleAbout;
-            document.getElementById('about-desc').innerText = t.aboutDesc;
+            document.getElementById('about-container').innerHTML = t.aboutHTML;
 
             document.getElementById('title-edu').innerText = t.titleEdu;
             document.getElementById('edu-degree').innerText = t.eduDegree;
@@ -378,6 +403,14 @@
             document.getElementById('title-cv').innerText = t.titleCv;
             document.getElementById('btn-cv-download').innerText = t.btnCvDownload;
         }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateUI();
+        }
+
+        // تشغيل التنسيق لأول مرة
+        updateUI();
     </script>
 </body>
 </html>
