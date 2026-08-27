@@ -1,144 +1,239 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Osama Alshammari - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1a1a1a;
+            --accent-copper: #c5a059;
+            --accent-copper-hover: #e5b869;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-color: #2a2a2a;
+            --gold-glow: rgba(197, 160, 89, 0.15);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
         }
 
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Geometric Geometric Accent background overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 50% 10%, rgba(197, 160, 89, 0.05) 0%, transparent 60%),
+                linear-gradient(45deg, transparent 49%, rgba(197, 160, 89, 0.03) 50%, transparent 51%);
+            background-size: 100% 100%, 60px 60px;
+            pointer-events: none;
+            z-index: -1;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 10%;
-            background-color: #1e293b;
-            border-bottom: 1px solid #334155;
+            padding: 20px 8%;
+            background-color: rgba(26, 26, 26, 0.95);
+            border-bottom: 1px solid var(--border-color);
             position: sticky;
             top: 0;
             z-index: 100;
+            backdrop-filter: blur(10px);
         }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #38bdf8;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-emblem {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--accent-copper);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            color: var(--accent-copper);
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px var(--gold-glow);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
         .nav-links a {
-            color: #94a3b8;
+            color: var(--text-muted);
             text-decoration: none;
-            margin: 0 12px;
+            margin: 0 15px;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: #38bdf8;
+            color: var(--accent-copper);
         }
 
         .lang-btn {
-            background-color: #3b82f6;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 6px;
+            background: transparent;
+            color: var(--accent-copper);
+            border: 1px solid var(--accent-copper);
+            padding: 8px 18px;
+            border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: var(--accent-copper);
+            color: #121212;
+            box-shadow: 0 0 15px var(--gold-glow);
         }
 
         .hero {
-            padding: 80px 10%;
+            padding: 100px 8% 80px 8%;
             text-align: center;
-            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            position: relative;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
+            font-size: 42px;
+            margin-bottom: 15px;
             color: #ffffff;
+            font-weight: 700;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #94a3b8;
-            max-width: 700px;
-            margin: 0 auto 25px auto;
+            font-size: 19px;
+            color: var(--text-muted);
+            max-width: 750px;
+            margin: 0 auto 35px auto;
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            border-radius: 6px;
+            padding: 12px 26px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 5px;
-            transition: background 0.3s;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 15px;
         }
 
-        .btn-primary {
-            background-color: #2563eb;
-            color: white;
+        .btn-copper {
+            background-color: var(--accent-copper);
+            color: #121212;
         }
 
-        .btn-secondary {
-            background-color: #334155;
-            color: white;
+        .btn-copper:hover {
+            background-color: var(--accent-copper-hover);
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
         }
 
-        .btn-success {
-            background-color: #16a34a;
-            color: white;
+        .btn-outline {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-copper);
+            color: var(--accent-copper);
         }
 
         section {
-            padding: 60px 10%;
+            padding: 80px 8%;
         }
 
         .section-title {
-            font-size: 26px;
-            color: #38bdf8;
-            margin-bottom: 30px;
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 40px;
             text-align: center;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-copper);
+            margin: 12px auto 0 auto;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .card {
-            background-color: #1e293b;
-            padding: 25px;
-            border-radius: 10px;
-            border: 1px solid #334155;
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-copper);
         }
 
         .card h3 {
-            color: #f1f5f9;
-            margin-bottom: 15px;
+            color: var(--accent-copper);
+            margin-bottom: 18px;
+            font-size: 20px;
         }
 
         .card p, .card ul {
-            color: #94a3b8;
+            color: var(--text-muted);
             font-size: 15px;
         }
 
         .card ul {
             padding-right: 20px;
-            line-height: 1.8;
+            line-height: 1.9;
         }
 
         .card-en ul {
@@ -147,42 +242,48 @@
         }
 
         .contact-box {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 12px;
-            padding: 40px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 45px;
             text-align: center;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
         .contact-box a {
-            color: #38bdf8;
+            color: var(--accent-copper);
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .contact-box a:hover {
+            color: var(--accent-copper-hover);
         }
 
         .cv-container {
-            background-color: #0f172a;
-            border-top: 1px solid #334155;
+            background-color: var(--bg-color);
+            border-top: 1px solid var(--border-color);
             text-align: center;
             direction: ltr;
         }
 
         .btn-download {
             display: inline-block;
-            padding: 12px 28px;
-            background-color: #2563eb;
-            color: #ffffff;
+            padding: 14px 32px;
+            background-color: var(--accent-copper);
+            color: #121212;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 6px;
-            margin-bottom: 25px;
-            transition: background 0.3s;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
         }
 
         .btn-download:hover {
-            background-color: #1d4ed8;
+            background-color: var(--accent-copper-hover);
+            box-shadow: 0 0 15px var(--gold-glow);
         }
 
         .iframe-box {
@@ -193,24 +294,28 @@
         iframe {
             width: 100%;
             height: 750px;
-            border: 1px solid #334155;
-            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             background-color: #ffffff;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #020617;
-            color: #64748b;
+            padding: 25px;
+            background-color: #0a0a0a;
+            color: #666666;
             font-size: 14px;
+            border-top: 1px solid var(--border-color);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">Osama Alshammari</div>
+        <div class="logo-container">
+            <div class="logo-emblem">OA</div>
+            <div class="logo-text">Osama Alshammari</div>
+        </div>
         <nav class="nav-links">
             <a href="#about" id="nav-about">عني</a>
             <a href="#education" id="nav-edu">التعليم</a>
@@ -225,20 +330,20 @@
     <section class="hero">
         <h1 id="hero-title">أسامة الشمري</h1>
         <p id="hero-bio">خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.</p>
-        <div>
-            <a href="https://www.linkedin.com/in/osamaalshammarii/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="btn-linkedin">LinkedIn</a>
-            <a href="https://wa.me/966556479058" target="_blank" class="btn btn-success" id="btn-whatsapp">💬 واتساب</a>
-            <a href="mailto:shmryaa618@gmail.com" class="btn btn-secondary" id="btn-email">✉️ إيميل</a>
+        <div class="hero-btns">
+            <a href="https://www.linkedin.com/in/osamaalshammarii/" target="_blank" rel="noopener noreferrer" class="btn btn-copper" id="btn-linkedin">LinkedIn</a>
+            <a href="https://wa.me/966556479058" target="_blank" class="btn btn-outline" id="btn-whatsapp">💬 واتساب</a>
+            <a href="mailto:shmryaa618@gmail.com" class="btn btn-outline" id="btn-email">✉️ إيميل</a>
         </div>
     </section>
 
-    <!-- قسم نبذة عني باللغتين العربية والإنجليزية معاً -->
+    <!-- قسم نبذة عني -->
     <section id="about">
         <h2 class="section-title" id="title-about">نبذة عني / About Me</h2>
         <div class="grid">
             <!-- البطاقة العربية -->
             <div class="card" dir="rtl">
-                <h3 style="color: #38bdf8;">🇸🇦 نبذة عني</h3>
+                <h3>🇸🇦 نبذة عني</h3>
                 <p style="margin-bottom: 12px;"><strong>خريج علوم حاسب</strong> أجمع بين التأسيس الأكاديمي القوي والخبرة العملية الميدانية في تطوير الحلول البرمجية:</p>
                 <ul>
                     <li><strong>الخبرة العملية:</strong> مطور ويب (Full-Stack) خلال التدريب التعاوني بمدينة الملك فهد الطبية.</li>
@@ -250,7 +355,7 @@
 
             <!-- البطاقة الإنجليزية -->
             <div class="card card-en" dir="ltr">
-                <h3 style="color: #38bdf8;"> About Me</h3>
+                <h3>About Me</h3>
                 <p style="margin-bottom: 12px;"><strong>Computer Science Graduate</strong> combining solid academic foundations with hands-on software development experience:</p>
                 <ul>
                     <li><strong>Professional Experience:</strong> Full-Stack Web Developer Intern at King Fahd Medical City.</li>
@@ -267,7 +372,7 @@
         <div class="grid">
             <div class="card">
                 <h3 id="edu-degree">بكالوريوس علوم الحاسب</h3>
-                <p id="edu-univ" style="color: #38bdf8; margin-bottom: 10px;">جامعة حفر الباطن</p>
+                <p id="edu-univ" style="color: var(--accent-copper); margin-bottom: 10px; font-weight: bold;">جامعة حفر الباطن</p>
                 <p id="edu-desc">دراسة شاملة لقواعد البيانات، الخوارزميات وهياكل البيانات، شبكات الحاسب، أمن المعلومات، والذكاء الاصطناعي، مع إتقان استخدام أدوات البرمجة وحزمة Microsoft Office (Excel, PowerPoint, Word, Outlook).</p>
             </div>
         </div>
@@ -305,7 +410,6 @@
         </div>
     </section>
 
-    <!-- قسم التواصل المباشر -->
     <section id="contact">
         <h2 class="section-title" id="title-contact">تواصل معي</h2>
         <div class="contact-box">
