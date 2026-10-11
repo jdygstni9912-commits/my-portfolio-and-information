@@ -3,519 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Osama Alshammari - Portfolio</title>
+    <title>أسامة الشمري | خريج علوم حاسب ومطوّر تطبيقات ويب متكاملة</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #121212;
-            --card-bg: #1a1a1a;
-            --accent-copper: #c5a059;
-            --accent-copper-hover: #e5b869;
-            --text-main: #e0e0e0;
-            --text-muted: #a0a0a0;
-            --border-color: #2a2a2a;
-            --gold-glow: rgba(197, 160, 89, 0.15);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.7;
-        }
-
-        /* Geometric Geometric Accent background overlay */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 50% 10%, rgba(197, 160, 89, 0.05) 0%, transparent 60%),
-                linear-gradient(45deg, transparent 49%, rgba(197, 160, 89, 0.03) 50%, transparent 51%);
-            background-size: 100% 100%, 60px 60px;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background-color: rgba(26, 26, 26, 0.95);
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-emblem {
-            width: 40px;
-            height: 40px;
-            border: 2px solid var(--accent-copper);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Cinzel', serif;
-            font-weight: 700;
-            color: var(--accent-copper);
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px var(--gold-glow);
-        }
-
-        .logo-text {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-copper);
-        }
-
-        .lang-btn {
-            background: transparent;
-            color: var(--accent-copper);
-            border: 1px solid var(--accent-copper);
-            padding: 8px 18px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .lang-btn:hover {
-            background-color: var(--accent-copper);
-            color: #121212;
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
-
-        .hero {
-            padding: 100px 8% 80px 8%;
-            text-align: center;
-            position: relative;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 15px;
-            color: #ffffff;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: var(--text-muted);
-            max-width: 750px;
-            margin: 0 auto 35px auto;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 26px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            font-size: 15px;
-        }
-
-        .btn-copper {
-            background-color: var(--accent-copper);
-            color: #121212;
-        }
-
-        .btn-copper:hover {
-            background-color: var(--accent-copper-hover);
-            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--accent-copper);
-            color: var(--accent-copper);
-        }
-
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            font-size: 28px;
-            color: #ffffff;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-copper);
-            margin: 12px auto 0 auto;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            padding: 30px;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            position: relative;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-copper);
-        }
-
-        .card h3 {
-            color: var(--accent-copper);
-            margin-bottom: 18px;
-            font-size: 20px;
-        }
-
-        .card p, .card ul {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        .card ul {
-            padding-right: 20px;
-            line-height: 1.9;
-        }
-
-        .card-en ul {
-            padding-right: 0;
-            padding-left: 20px;
-        }
-
-        .contact-box {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 45px;
-            text-align: center;
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .contact-box a {
-            color: var(--accent-copper);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .contact-box a:hover {
-            color: var(--accent-copper-hover);
-        }
-
-        .cv-container {
-            background-color: var(--bg-color);
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            direction: ltr;
-        }
-
-        .btn-download {
-            display: inline-block;
-            padding: 14px 32px;
-            background-color: var(--accent-copper);
-            color: #121212;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-download:hover {
-            background-color: var(--accent-copper-hover);
-            box-shadow: 0 0 15px var(--gold-glow);
-        }
-
-        .iframe-box {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        iframe {
-            width: 100%;
-            height: 750px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            background-color: #ffffff;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background-color: #0a0a0a;
-            color: #666666;
-            font-size: 14px;
-            border-top: 1px solid var(--border-color);
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo-container">
-            <div class="logo-emblem">OA</div>
-            <div class="logo-text">Osama Alshammari</div>
-        </div>
-        <nav class="nav-links">
-            <a href="#about" id="nav-about">عني</a>
-            <a href="#education" id="nav-edu">التعليم</a>
-            <a href="#projects" id="nav-proj">المشاريع</a>
-            <a href="#skills" id="nav-skills">المهارات</a>
-            <a href="#contact" id="nav-contact">التواصل</a>
-            <a href="#cv-section" id="nav-cv">السيرة الذاتية</a>
-        </nav>
-        <button class="lang-btn" onclick="toggleLanguage()" id="lang-btn">English</button>
-    </header>
-
-    <section class="hero">
-        <h1 id="hero-title">أسامة الشمري</h1>
-        <p id="hero-bio">خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.</p>
-        <div class="hero-btns">
-            <a href="https://www.linkedin.com/in/osamaalshammarii/" target="_blank" rel="noopener noreferrer" class="btn btn-copper" id="btn-linkedin">LinkedIn</a>
-            <a href="https://wa.me/966556479058" target="_blank" class="btn btn-outline" id="btn-whatsapp">💬 واتساب</a>
-            <a href="mailto:shmryaa618@gmail.com" class="btn btn-outline" id="btn-email">✉️ إيميل</a>
-        </div>
-    </section>
-
-    <!-- قسم نبذة عني -->
-    <section id="about">
-        <h2 class="section-title" id="title-about">نبذة عني / About Me</h2>
-        <div class="grid">
-            <!-- البطاقة العربية -->
-            <div class="card" dir="rtl">
-                <h3>🇸🇦 نبذة عني</h3>
-                <p style="margin-bottom: 12px;"><strong>خريج علوم حاسب</strong> أجمع بين التأسيس الأكاديمي القوي والخبرة العملية الميدانية في تطوير الحلول البرمجية:</p>
-                <ul>
-                    <li><strong>الخبرة العملية:</strong> مطور ويب (Full-Stack) خلال التدريب التعاوني بمدينة الملك فهد الطبية.</li>
-                    <li><strong>التقنيات الأساسية:</strong> بناء تطبيقات ومواقع الويب باستخدام C#، ASP.NET Core، و SQL Server.</li>
-                    <li><strong>الخلفية الأكاديمية:</strong> خوارزميات وهياكل البيانات، شبكات الحاسب، الذكاء الاصطناعي، والأمن السيبراني.</li>
-                    <li><strong>الهدف المهني:</strong> الانضمام لفريق عمل مميز في مجالات هندسة البرمجيات وتطوير الويب.</li>
-                </ul>
-            </div>
-
-            <!-- البطاقة الإنجليزية -->
-            <div class="card card-en" dir="ltr">
-                <h3>About Me</h3>
-                <p style="margin-bottom: 12px;"><strong>Computer Science Graduate</strong> combining solid academic foundations with hands-on software development experience:</p>
-                <ul>
-                    <li><strong>Professional Experience:</strong> Full-Stack Web Developer Intern at King Fahd Medical City.</li>
-                    <li><strong>Core Tech Stack:</strong> Web Application Development using C#, ASP.NET Core, and SQL Server.</li>
-                    <li><strong>Academic Background:</strong> Data Structures, Algorithms, Computer Networks, AI, and Cybersecurity.</li>
-                    <li><strong>Career Goal:</strong> Seeking a full-time role in Software Engineering or Web Development.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2 class="section-title" id="title-edu">التعليم</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 id="edu-degree">بكالوريوس علوم الحاسب</h3>
-                <p id="edu-univ" style="color: var(--accent-copper); margin-bottom: 10px; font-weight: bold;">جامعة حفر الباطن</p>
-                <p id="edu-desc">دراسة شاملة لقواعد البيانات، الخوارزميات وهياكل البيانات، شبكات الحاسب، أمن المعلومات، والذكاء الاصطناعي، مع إتقان استخدام أدوات البرمجة وحزمة Microsoft Office (Excel, PowerPoint, Word, Outlook).</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title" id="title-proj">المشاريع والخبرات</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 id="p1-t">التدريب التعاوني - KFMC</h3>
-                <p id="p1-d">تطوير وتصميم تطبيقات ويب متكاملة وإدارة قواعد البيانات باستعمال Visual Studio 2019، ASP.NET Core، ASP.NET MVC، و SQL Server، مع تطبيق أفضل الممارسات في هندسة البرمجيات وتكامل الأنظمة الطبية.</p>
-            </div>
-            <div class="card">
-                <h3 id="p2-t">تطوير تطبيقات الويب وقواعد البيانات</h3>
-                <p id="p2-d">بناء تطبيق ويب متكامل باستعمال C# و ASP.NET Core بتصميم الطبقات المترابطة وتكامل قواعد البيانات SQL.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title" id="title-skills">المهارات</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Programming & Web</h3>
-                <p>C#, ASP.NET Core, ASP.NET MVC, SQL Server, Visual Studio 2019, HTML/CSS, JavaScript</p>
-            </div>
-            <div class="card">
-                <h3>Technical & Analytical</h3>
-                <p>Database Architecture, Full-Stack Web Development, System Integration, System Troubleshooting</p>
-            </div>
-            <div class="card">
-                <h3>Soft Skills</h3>
-                <p>Work Under Pressure, Problem Solving, Fast Learning, Teamwork, Technical Communication</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title" id="title-contact">تواصل معي</h2>
-        <div class="contact-box">
-            <p style="font-size: 18px; margin-bottom: 15px;" id="contact-text">يسعدني التواصل معك لأي استفسارات أو فرص عمل:</p>
-            <p style="margin-bottom: 10px;">📱 <strong id="lbl-phone">رقم الجوال:</strong> <a href="tel:+966556479058" dir="ltr">+966 556479058</a></p>
-            <p>✉️ <strong id="lbl-email">البريد الإلكتروني:</strong> <a href="mailto:shmryaa618@gmail.com">shmryaa618@gmail.com</a></p>
-        </div>
-    </section>
-
-    <section class="cv-container" id="cv-section">
-        <h2 class="section-title" id="title-cv" style="color: #ffffff;">MY RESUME</h2>
-        
-        <a id="btn-cv-download" href="Osama_Alshammari_CV.pdf" download class="btn-download">
-            📄 Download CV (PDF)
-        </a>
-
-        <div class="iframe-box">
-            <iframe src="Osama_Alshammari_CV.pdf"></iframe>
-        </div>
-    </section>
-
-    <footer>
-        <p>© 2026 Osama Alshammari. All rights reserved.</p>
-    </footer>
-
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        let currentLang = 'ar';
-
-        const translations = {
-            ar: {
-                navAbout: "عني", navEdu: "التعليم", navProj: "المشاريع", navSkills: "المهارات", navContact: "التواصل", navCv: "السيرة الذاتية",
-                heroTitle: "أسامة الشمري", heroBio: "خريج علوم حاسب شغوف بتطوير البرمجيات وتطوير الويب وتحليل البيانات.",
-                btnLinkedin: "LinkedIn", btnWhatsapp: "💬 واتساب", btnEmail: "✉️ إيميل",
-                titleAbout: "نبذة عني / About Me",
-                titleEdu: "التعليم", eduDegree: "بكالوريوس علوم الحاسب", eduUniv: "جامعة حفر الباطن", 
-                eduDesc: "دراسة شاملة لقواعد البيانات، الخوارزميات وهياكل البيانات، شبكات الحاسب، أمن المعلومات، والذكاء الاصطناعي، مع إتقان استخدام أدوات البرمجة وحزمة Microsoft Office (Excel, PowerPoint, Word, Outlook).",
-                titleProj: "المشاريع والخبرات", 
-                p1T: "التدريب التعاوني - KFMC", 
-                p1D: "تطوير وتصميم تطبيقات ويب متكاملة وإدارة قواعد البيانات باستعمال Visual Studio 2019، ASP.NET Core، ASP.NET MVC، و SQL Server، مع تطبيق أفضل الممارسات في هندسة البرمجيات وتكامل الأنظمة الطبية.",
-                p2T: "تطوير تطبيقات الويب وقواعد البيانات", p2D: "بناء تطبيق ويب متكامل باستعمال C# و ASP.NET Core بتصميم الطبقات المترابطة وتكامل قواعد البيانات SQL.",
-                titleSkills: "المهارات", 
-                titleContact: "تواصل معي", contactText: "يسعدني التواصل معك لأي استفسارات أو فرص عمل:", lblPhone: "رقم الجوال:", lblEmail: "البريد الإلكتروني:",
-                titleCv: "السيرة الذاتية (RESUME)", btnCvDownload: "📄 تحميل السيرة الذاتية (PDF)",
-                langBtn: "English", dir: "rtl"
-            },
-            en: {
-                navAbout: "About", navEdu: "Education", navProj: "Projects", navSkills: "Skills", navContact: "Contact", navCv: "CV",
-                heroTitle: "Osama Alshammari", heroBio: "Computer Science Graduate passionate about Software Engineering, Web Development, and Data Analysis.",
-                btnLinkedin: "LinkedIn", btnWhatsapp: "💬 WhatsApp", btnEmail: "✉️ Email",
-                titleAbout: "About Me / نبذة عني",
-                titleEdu: "Education", eduDegree: "Bachelor's Degree in Computer Science", eduUniv: "University of Hafar Al Batin", 
-                eduDesc: "Comprehensive coursework in Database Management, Algorithms, Network Security, Cryptography, and Software Engineering, proficient with Microsoft Office tools.",
-                titleProj: "Experience & Projects", 
-                p1T: "COOP Training - KFMC", 
-                p1D: "Developed scalable full-stack web applications and managed database architecture using Visual Studio 2019, ASP.NET Core, ASP.NET MVC, and SQL Server, applying software engineering best practices.",
-                p2T: "Full-Stack Web & SQL Projects", p2D: "Engineered scalable web applications using C# and ASP.NET Core with layered architecture and SQL database integration.",
-                titleSkills: "Skills", 
-                titleContact: "Contact Me", contactText: "Feel free to reach out for opportunities or inquiries:", lblPhone: "Phone:", lblEmail: "Email:",
-                titleCv: "MY RESUME", btnCvDownload: "📄 Download CV (PDF)",
-                langBtn: "عربي", dir: "ltr"
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['IBM Plex Sans Arabic', 'sans-serif'],
+                    }
+                }
             }
-        };
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            const t = translations[currentLang];
-
-            document.documentElement.dir = t.dir;
-            document.getElementById('lang-btn').innerText = t.langBtn;
-            
-            document.getElementById('nav-about').innerText = t.navAbout;
-            document.getElementById('nav-edu').innerText = t.navEdu;
-            document.getElementById('nav-proj').innerText = t.navProj;
-            document.getElementById('nav-skills').innerText = t.navSkills;
-            document.getElementById('nav-contact').innerText = t.navContact;
-            document.getElementById('nav-cv').innerText = t.navCv;
-
-            document.getElementById('hero-title').innerText = t.heroTitle;
-            document.getElementById('hero-bio').innerText = t.heroBio;
-            document.getElementById('btn-linkedin').innerText = t.btnLinkedin;
-            document.getElementById('btn-whatsapp').innerText = t.btnWhatsapp;
-            document.getElementById('btn-email').innerText = t.btnEmail;
-
-            document.getElementById('title-about').innerText = t.titleAbout;
-
-            document.getElementById('title-edu').innerText = t.titleEdu;
-            document.getElementById('edu-degree').innerText = t.eduDegree;
-            document.getElementById('edu-univ').innerText = t.eduUniv;
-            document.getElementById('edu-desc').innerText = t.eduDesc;
-
-            document.getElementById('title-proj').innerText = t.titleProj;
-            document.getElementById('p1-t').innerText = t.p1T;
-            document.getElementById('p1-d').innerText = t.p1D;
-            document.getElementById('p2-t').innerText = t.p2T;
-            document.getElementById('p2-d').innerText = t.p2D;
-
-            document.getElementById('title-skills').innerText = t.titleSkills;
-
-            document.getElementById('title-contact').innerText = t.titleContact;
-            document.getElementById('contact-text').innerText = t.contactText;
-            document.getElementById('lbl-phone').innerText = t.lblPhone;
-            document.getElementById('lbl-email').innerText = t.lblEmail;
-
-            document.getElementById('title-cv').innerText = t.titleCv;
-            document.getElementById('btn-cv-download').innerText = t.btnCvDownload;
         }
     </script>
+</head>
+<body class="bg-[#0b0f17] text-slate-100 font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="border-b border-slate-800/80 bg-[#0b0f17]/90 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-500 font-bold flex items-center justify-center text-sm">OA</span>
+                <span class="font-bold text-lg text-white">أسامة الشمري</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+                <a href="#about" class="hover:text-amber-500 transition-colors">نبذة</a>
+                <a href="#experience" class="hover:text-amber-500 transition-colors">الخبرة</a>
+                <a href="#projects" class="hover:text-amber-500 transition-colors">المشاريع</a>
+                <a href="#skills" class="hover:text-amber-500 transition-colors">المهارات</a>
+            </div>
+            <a href="#contact" class="bg-amber-500 hover:bg-amber-400 text-black font-bold text-sm px-5 py-2.5 rounded-lg transition-all">
+                تواصل معي ↗
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <section class="max-w-4xl mx-auto px-6 pt-16 pb-16 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-semibold mb-8">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            متاح لفرص العمل بدوام كامل
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            أسامة الشمري<br>
+            <span class="text-amber-500">خريج علوم حاسب ومطوّر تطبيقات ويب متكاملة</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            أبني حلول ويب موثوقة، وأُنظم البيانات لتتحول الإجراءات المعقدة إلى تجربة أسرع وأوضح.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+            <a href="#projects" class="bg-amber-500 hover:bg-amber-400 text-black font-bold px-7 py-3 rounded-lg transition-all">
+                استعرض مشاريعي ↗
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="border border-slate-700 bg-slate-900/50 hover:bg-slate-800 text-slate-200 font-semibold px-7 py-3 rounded-lg transition-all">
+                📂 ملف LinkedIn
+            </a>
+            <a href="https://drive.google.com/uc?export=download&id=1a32TFUydWbuRgsmUsJ4Q8xqrgNKNm1vb" target="_blank" class="border border-amber-500/40 bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 font-semibold px-7 py-3 rounded-lg transition-all">
+                📄 تحميل السي في (CV)
+            </a>
+        </div>
+        <div class="text-slate-500 text-xs">📍 المملكة العربية السعودية</div>
+    </section>
+
+    <!-- Section 1: About -->
+    <section id="about" class="border-t border-slate-800/80 py-20 bg-[#080b11]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-amber-500 text-xs font-bold mb-2">.٠١ الملف المهني</div>
+            <div class="grid md:grid-cols-12 gap-10 items-start">
+                <div class="md:col-span-5">
+                    <span class="text-amber-500 text-sm font-semibold block mb-2">نبذة عني</span>
+                    <h2 class="text-3xl font-bold text-white leading-snug">
+                        برمجيات عملية تبدأ من فهم النظام وتنتهي بنتيجة قابلة للقياس.
+                    </h2>
+                </div>
+                <div class="md:col-span-7">
+                    <p class="text-slate-400 text-base leading-relaxed mb-10 text-justify">
+                        خريج علوم حاسب يجمع بين مهارات تطوير البرمجيات، إدارة قواعد البيانات، والدعم التقني للأنظمة. متخصص في C# وASP.NET Core وهندسة SQL Server، مع خبرة عملية في حل المشكلات التقنية وتوفير الدعم الفني. أسهمت خلال التدريب التعاوني في مدينة الملك فهد الطبية في أتمتة الإجراءات الإدارية وتحسين أداء قواعد البيانات. أسعى لفرصة عمل بدوام كامل في مجالات IT Support، تطوير البرمجيات، تحليل البيانات، أو إدارة الأنظمة.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-slate-800 text-right">
+                        <div>
+                            <div class="font-bold text-white text-sm mb-1">تطوير البرمجيات</div>
+                            <div class="text-xs text-slate-500">حلول ويب متكاملة</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm mb-1">قواعد البيانات</div>
+                            <div class="text-xs text-slate-500">تصميم وتحسين SQL</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm mb-1">الدعم والأنظمة (IT)</div>
+                            <div class="text-xs text-slate-500">تشغيل ودعم تقني</div>
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm mb-1">تحليل الأنظمة</div>
+                            <div class="text-xs text-slate-500">توثيق وحل مشكلات</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Experience -->
+    <section id="experience" class="border-t border-slate-800/80 py-20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-amber-500 text-xs font-bold mb-8">.٠٢ الخبرة العملية</div>
+            <div class="bg-[#111622] border border-slate-800 rounded-2xl p-8">
+                <div class="flex flex-wrap justify-between items-start gap-4 mb-6">
+                    <div>
+                        <span class="text-amber-500 font-semibold text-xs block mb-1">مدينة الملك فهد الطبية (KFMC)</span>
+                        <h3 class="text-2xl font-bold text-white">متدرب مطوّر تطبيقات ويب متكاملة – برنامج التدريب التعاوني</h3>
+                        <p class="text-slate-400 text-sm mt-1">إدارة تقنية المعلومات التطبيقية وتطوير البرمجيات</p>
+                    </div>
+                    <span class="text-xs text-slate-500 bg-slate-800/60 px-3 py-1.5 rounded-md">يونيو 2025 – ديسمبر 2025</span>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6 text-sm text-slate-300">
+                    <div class="flex gap-3">
+                        <span class="text-amber-500">✓</span>
+                        <div>
+                            <strong class="text-white block mb-1">أتمتة الإجراءات الإدارية</strong>
+                            طوّرت ونشرت بوابة ويب متكاملة باستخدام C# وASP.NET Core MVC لأتمتة سير العمل الداخلي وتسرع معالجة الطلبات.
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="text-amber-500">✓</span>
+                        <div>
+                            <strong class="text-white block mb-1">تحسين قواعد البيانات العلائقية</strong>
+                            صممت قواعد بيانات SQL Server مطبّقة وحسّنت تنفيذ الاستعلامات لرفع سرعتها.
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="text-amber-500">✓</span>
+                        <div>
+                            <strong class="text-white block mb-1">رفع موثوقية الأنظمة والدعم</strong>
+                            نفّذت اختبارات شاملة مع معالجة الأعطال وتقديم الدعم التقني الأولي للحفاظ على توافر التطبيق.
+                        </div>
+                    </div>
+                    <div class="flex gap-3">
+                        <span class="text-amber-500">✓</span>
+                        <div>
+                            <strong class="text-white block mb-1">توحيد التوثيق التقني</strong>
+                            أعددت توثيقاً تقنياً شاملاً ومخططات ER لتسريع تهيئة الأعضاء وتيسير الصيانة المستقبليّة.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Projects -->
+    <section id="projects" class="py-20 bg-[#eceae5] text-slate-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-amber-700 text-xs font-bold mb-2">.٠٣ مشاريع مختارة</div>
+            <h2 class="text-4xl font-bold mb-12">من الفكرة إلى حل يعمل.</h2>
+            <div class="space-y-8">
+                <div class="border-b border-slate-300 pb-8 flex flex-col md:flex-row justify-between gap-6">
+                    <div>
+                        <span class="text-xs font-semibold text-slate-500 block mb-1">مشروع التخرج</span>
+                        <h3 class="text-2xl font-bold mb-2">تحليل تصنيف الآفات الجلدية</h3>
+                        <p class="text-slate-600 text-sm max-w-xl">شاركت ضمن فريق من 5 أعضاء في تقييم نموذج شبكة عصبية لتصنيف الصور، وأسهمت في تحليل الشفرة والتوثيق التقني.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 items-center">
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">الشبكات العصبية</span>
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">تصنيف الصور</span>
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">التحليل التقني</span>
+                    </div>
+                </div>
+                <div class="border-b border-slate-300 pb-8 flex flex-col md:flex-row justify-between gap-6">
+                    <div>
+                        <span class="text-xs font-semibold text-slate-500 block mb-1">مشروع برمجي</span>
+                        <h3 class="text-2xl font-bold mb-2">تطبيق ASP.NET Core بنية متعددة الطبقات</h3>
+                        <p class="text-slate-600 text-sm max-w-xl">صممت حل ويب قابلاً للتوسع بنية من ثلاث طبقات تشمل واجهة المستخدم ومنطق الأعمال لتبسيط العمليات.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 items-center">
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">C#</span>
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">ASP.NET Core</span>
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">3-Tier Architecture</span>
+                    </div>
+                </div>
+                <div class="pb-4 flex flex-col md:flex-row justify-between gap-6">
+                    <div>
+                        <span class="text-xs font-semibold text-slate-500 block mb-1">أداة إدارية</span>
+                        <h3 class="text-2xl font-bold mb-2">أداة ربط سطح المكتب بـ SQL Server</h3>
+                        <p class="text-slate-600 text-sm max-w-xl">طوّرت أداة بلغة C# داخل Visual Studio ومتكاملة مع SQL Server لأتمتة إنشاء الاستعلامات والتقارير.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 items-center">
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">C#</span>
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">Visual Studio</span>
+                        <span class="text-xs bg-slate-200 px-3 py-1 rounded">SQL Server</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Skills -->
+    <section id="skills" class="py-20 border-t border-slate-800/80">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-amber-500 text-xs font-bold mb-8">.٠٤ المهارات والأدوات</div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">💻 لغات البرمجة</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>• C#</li>
+                        <li>• SQL</li>
+                        <li>• Java</li>
+                        <li>• C / C++</li>
+                        <li>• HTML/CSS</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">⚙️ الأطر والأدوات</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>• ASP.NET Core / MVC</li>
+                        <li>• Entity Framework</li>
+                        <li>• SQL Server</li>
+                        <li>• Visual Studio</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">🛠️ المهارات التقنية والدعم</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li>• تطوير الويب المتكامل</li>
+                        <li>• هندسة قواعد البيانات</li>
+                        <li>• استكشاف الأخطاء وإصلاحها (IT Support)</li>
+                        <li>• شبكات الحاسب وأمن المعلومات</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Education & Certificates -->
+    <section class="py-20 border-t border-slate-800/80 bg-[#080b11]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-amber-500 text-xs font-bold mb-8">.٠٥ التعليم والشهادات</div>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">🎓 التعليم</h3>
+                    <div class="border-r-2 border-amber-500 pr-4">
+                        <h4 class="text-lg font-bold text-white">بكالوريوس علوم الحاسب</h4>
+                        <p class="text-slate-400 text-sm">جامعة حفر الباطن</p>
+                        <span class="text-amber-500 text-xs mt-2 block font-semibold">التخرج: أغسطس 2026</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">📜 الشهادات المهنية</h3>
+                    <div class="space-y-4 text-sm">
+                        <div class="border-b border-slate-800 pb-3">
+                            <h4 class="font-bold text-white">شهادة التدريب التعاوني</h4>
+                            <p class="text-slate-400 text-xs">مدينة الملك فهد الطبية - يونيو إلى ديسمبر 2025</p>
+                        </div>
+                        <div class="border-b border-slate-800 pb-3">
+                            <h4 class="font-bold text-white">تجربة العمل الافتراضية في تحليل البيانات</h4>
+                            <p class="text-slate-400 text-xs">مؤسسة مسك و stc - سبتمبر 2025</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">الأساسيات المهنية في تحليل الأعمال</h4>
+                            <p class="text-slate-400 text-xs">Microsoft & LinkedIn Learning - نوفمبر 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Contact Banner (Yellow) -->
+    <section id="contact" class="bg-amber-500 text-black py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">هل تبحث عن مطوّر يجمع بين بناء الأنظمة وفهم البيانات؟</h2>
+            <p class="text-amber-950 font-medium mb-8">يسعدني مناقشة فرص هندسة البرمجيات، الدعم الفني، وتطوير الويب وتحليل البيانات.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:shmry121212@gmail.com" class="bg-black text-white font-bold px-6 py-3 rounded-lg hover:bg-slate-800 transition-all">
+                    ✉️ راسلني إلكترونياً
+                </a>
+                <a href="https://drive.google.com/uc?export=download&id=1a32TFUydWbuRgsmUsJ4Q8xqrgNKNm1vb" target="_blank" class="border-2 border-black text-black font-bold px-6 py-3 rounded-lg hover:bg-black/10 transition-all">
+                    📄 تحميل السيرة الذاتية
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#080b11] text-slate-500 text-xs py-8 text-center border-t border-slate-900">
+        © 2026 أسامة الشمري. جميع الحقوق محفوظة.
+    </footer>
+
 </body>
 </html>
